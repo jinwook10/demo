@@ -96,26 +96,27 @@
                                 <a href="/member/write"
                                    class="btn btn-danger"><i class="cil-brush"></i> 쓰기</a>
                             </div>
+<%--                            페이징할것--%>
                             <nav class="page_list">
                                 <ul class="pagination pagination-sm">
-                                    <li class="disabled"><a href="https://m16.me/Free"><span
+                                    <li class="disabled"><a href=""><span
                                             aria-hidden="true">«</span></a></li>
-                                    <li class="disabled"><a href="https://m16.me/Free?page=1" class="prevEnd"><span
+                                    <li class="disabled"><a href="" class="prevEnd"><span
                                             aria-hidden="true">‹</span></a></li>
                                     <li class="active"><a>1</a></li>
                                     <li></li>
-                                    <li><a href="https://m16.me/Free?page=2">2</a></li>
-                                    <li><a href="https://m16.me/Free?page=3">3</a></li>
-                                    <li><a href="https://m16.me/Free?page=4">4</a></li>
-                                    <li><a href="https://m16.me/Free?page=5">5</a></li>
-                                    <li><a href="https://m16.me/Free?page=6">6</a></li>
-                                    <li><a href="https://m16.me/Free?page=7">7</a></li>
-                                    <li><a href="https://m16.me/Free?page=8">8</a></li>
-                                    <li><a href="https://m16.me/Free?page=9">9</a></li>
-                                    <li><a href="https://m16.me/Free?page=10">10</a></li>
-                                    <li><a href="https://m16.me/Free?page=2"><span aria-hidden="true">›</span></a>
+                                    <li><a href="">2</a></li>
+                                    <li><a href="">3</a></li>
+                                    <li><a href="">4</a></li>
+                                    <li><a href="">5</a></li>
+                                    <li><a href="">6</a></li>
+                                    <li><a href="">7</a></li>
+                                    <li><a href="">8</a></li>
+                                    <li><a href="">9</a></li>
+                                    <li><a href="">10</a></li>
+                                    <li><a href=""><span aria-hidden="true">›</span></a>
                                     </li>
-                                    <li><a href="https://m16.me/Free?page=678" class="nextEnd"><span
+                                    <li><a href="" class="nextEnd"><span
                                             aria-hidden="true">»</span></a></li>
                                 </ul>
                             </nav>
