@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Board;
+import com.example.demo.model.BuyList;
 import com.example.demo.model.File;
 import org.springframework.stereotype.Service;
 
@@ -21,4 +22,6 @@ public interface BoardService {
     public Integer viewfile(String no);
 
     public void buy(String member, String title, String no);
+
+    public BuyList buycheck(String username, String no);
 }

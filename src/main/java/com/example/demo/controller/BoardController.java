@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Board;
+import com.example.demo.model.BuyList;
 import com.example.demo.model.File;
 import com.example.demo.model.Member;
 import com.example.demo.service.BoardService;
@@ -99,13 +100,16 @@ public class BoardController {
     }
 
     @GetMapping("/view")
-    public String view(@RequestParam("no") String no, Model model) {
+    public String view(@RequestParam("no") String no, Model model, Authentication auth) {
         Board board = boardService.viewDetail(no);
         Integer fileNo = boardService.viewfile(no);
+        String username = ((Member) auth.getPrincipal()).getName();
+        BuyList buycheck = boardService.buycheck(username, no);
 
         model.addAttribute("no", no);
         model.addAttribute("board", board);
         model.addAttribute("fileno", fileNo);
+        model.addAttribute("buycheck", buycheck);
         return "board/boardDetail";
     }
 
@@ -113,6 +117,6 @@ public class BoardController {
     public String buy(String title, Authentication auth, String no) {
         String member = ((Member) auth.getPrincipal()).getName();
         boardService.buy(member,title,no);
-        return "redirect:/board";
+        return "redirect:/view?no=" + no;
     }
 }

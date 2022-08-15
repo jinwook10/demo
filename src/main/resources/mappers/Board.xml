@@ -82,4 +82,9 @@
         , NOW()
         )
     </insert>
+
+    <select id="buycheck" resultType="BuyList" parameterType="String">
+        select * from buylist where member=#{username} and board_no=#{no}
+    </select>
+
 </mapper>

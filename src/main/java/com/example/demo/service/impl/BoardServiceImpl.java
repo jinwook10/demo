@@ -2,6 +2,7 @@ package com.example.demo.service.impl;
 
 import com.example.demo.mapper.BoardMapper;
 import com.example.demo.model.Board;
+import com.example.demo.model.BuyList;
 import com.example.demo.model.File;
 import com.example.demo.service.BoardService;
 import lombok.RequiredArgsConstructor;
@@ -48,6 +49,11 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public void buy(String member, String title, String no) {
         boardMapper.buy(member, title, no);
+    }
+
+    @Override
+    public BuyList buycheck(String username, String no) {
+        return boardMapper.buycheck(username, no);
     }
 
 }

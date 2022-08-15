@@ -83,9 +83,16 @@
 
                             <div class="feedback" id="comment">
                                 <c:if test="${not empty fileno}">
+                                    <c:if test="${not empty buycheck}">
                                 <div class="fbHeader">
                                     <h2><a href="/filedown?no=${fileno}">첨부파일</a></h2>
                                 </div>
+                                    </c:if>
+                                    <c:if test="${empty buycheck}">
+                                        <div class="fbHeader">
+                                            <h2><a href="">첨부파일(미구매)</a></h2>
+                                        </div>
+                                    </c:if>
                                 </c:if>
                             </div>
                             <c:if test="${not empty fileno}">
@@ -97,7 +104,7 @@
                                 </form>
                             </div>
                             </c:if>
-<%--                            <div id="write_comment">--%>
+<%--                    댓글        <div id="write_comment">--%>
 <%--                                <form action="" method="post" class="write_comment">--%>
 <%--                                    <div class="simple_wrt">--%>
 <%--                                        <textarea class="form-control" id="editor_56489792" cols="50"--%>

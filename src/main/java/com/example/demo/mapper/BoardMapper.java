@@ -1,6 +1,7 @@
 package com.example.demo.mapper;
 
 import com.example.demo.model.Board;
+import com.example.demo.model.BuyList;
 import com.example.demo.model.File;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -15,4 +16,6 @@ public interface BoardMapper {
     public File down(String no);
     public Integer viewfile(String no);
     public void buy(String member, String title, String no);
+
+    public BuyList buycheck(String username, String no);
 }
