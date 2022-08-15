@@ -5,7 +5,7 @@
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>게시판</title>
+    <title>자세히 보기</title>
     <link href="/css/coreui/css/style.min.css" rel="stylesheet">
     <link href="/css/coreui/css/free.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/m16/css/main.css">
@@ -40,7 +40,7 @@
                             <div class="dropdown-header bg-light py-2">
                                 <div class="fw-semibold">계정</div>
                             </div>
-                            <a class="dropdown-item" href="">
+                            <a class="dropdown-item" href="/member/mypage">
                                 <i class="icon icon-2xl cil-zoom"></i> 마이 페이지</a><a class="dropdown-item" href="">
                             <i class="icon icon-2xl cil-money"></i> 결제 수단</a>
                             <div class="dropdown-divider"></div>
@@ -82,27 +82,32 @@
                             </div>
 
                             <div class="feedback" id="comment">
-                                <div class="fbHeader">
-                                    <h2>댓글 갯수</h2>
-                                </div>
                                 <c:if test="${not empty fileno}">
-                                <div>
-                                    <a href="/filedown?no=${fileno}">첨부파일</a>
+                                <div class="fbHeader">
+                                    <h2><a href="/filedown?no=${fileno}">첨부파일</a></h2>
                                 </div>
                                 </c:if>
                             </div>
-
-                            <div id="write_comment">
-                                <form action="" method="post" class="write_comment">
-                                    <div class="simple_wrt">
-                                        <textarea class="form-control" id="editor_56489792" cols="50"
-                                                  rows="4"></textarea>
-                                    </div>
-                                    <div class="btnArea">
-                                        <button type="submit" class="btn btn-success"> 댓글 등록</button>
-                                    </div>
+                            <c:if test="${not empty fileno}">
+                            <div class="btnArea">
+                                <form action="/member/buy" method="post">
+                                    <input type="hidden" value="${board.title}" name="title">
+                                    <input type="hidden" value="${no}" name="no">
+                                <button type="submit" class="btn btn-success"> 구매</button>
                                 </form>
                             </div>
+                            </c:if>
+<%--                            <div id="write_comment">--%>
+<%--                                <form action="" method="post" class="write_comment">--%>
+<%--                                    <div class="simple_wrt">--%>
+<%--                                        <textarea class="form-control" id="editor_56489792" cols="50"--%>
+<%--                                                  rows="4"></textarea>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="btnArea">--%>
+<%--                                        <button type="submit" class="btn btn-success"> 댓글 등록</button>--%>
+<%--                                    </div>--%>
+<%--                                </form>--%>
+<%--                            </div>--%>
                             <div class="btnArea">
                                 <span class="goList"><a href="/board"
                                                         class="btn btn-default"> 목록</a></span>

@@ -5,7 +5,7 @@
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>게시판</title>
+    <title>글 작성</title>
     <link href="/css/coreui/css/style.min.css" rel="stylesheet">
     <link href="/css/coreui/css/free.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/m16/css/main.css">
@@ -50,7 +50,7 @@
                             <div class="dropdown-header bg-light py-2">
                                 <div class="fw-semibold">계정</div>
                             </div>
-                            <a class="dropdown-item" href="">
+                            <a class="dropdown-item" href="/member/mypage">
                                 <i class="icon icon-2xl cil-zoom"></i> 마이 페이지</a><a class="dropdown-item" href="">
                             <i class="icon icon-2xl cil-money"></i> 결제 수단</a>
                             <div class="dropdown-divider"></div>

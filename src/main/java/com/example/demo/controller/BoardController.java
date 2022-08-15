@@ -103,8 +103,16 @@ public class BoardController {
         Board board = boardService.viewDetail(no);
         Integer fileNo = boardService.viewfile(no);
 
+        model.addAttribute("no", no);
         model.addAttribute("board", board);
         model.addAttribute("fileno", fileNo);
         return "board/boardDetail";
+    }
+
+    @PostMapping("/member/buy")
+    public String buy(String title, Authentication auth, String no) {
+        String member = ((Member) auth.getPrincipal()).getName();
+        boardService.buy(member,title,no);
+        return "redirect:/board";
     }
 }

@@ -14,4 +14,5 @@ public interface BoardMapper {
     public void fileSave(File file);
     public File down(String no);
     public Integer viewfile(String no);
+    public void buy(String member, String title, String no);
 }

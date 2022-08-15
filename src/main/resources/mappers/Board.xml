@@ -65,4 +65,21 @@
     <select id="viewfile" resultType="int" parameterType="String">
         select id from board_file where board_no=#{no}
     </select>
+
+    <insert id="buy" parameterType="BuyList">
+        INSERT INTO buylist
+        (
+          member
+        , board_title
+        , board_no
+        , buy_date
+        )
+        VALUES
+        (
+          #{member}
+        , #{title}
+        , #{no}
+        , NOW()
+        )
+    </insert>
 </mapper>

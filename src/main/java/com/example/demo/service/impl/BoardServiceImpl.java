@@ -45,4 +45,9 @@ public class BoardServiceImpl implements BoardService {
         return boardMapper.viewfile(no);
     }
 
+    @Override
+    public void buy(String member, String title, String no) {
+        boardMapper.buy(member, title, no);
+    }
+
 }

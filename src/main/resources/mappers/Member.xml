@@ -5,14 +5,13 @@
 
 <mapper namespace="com.example.demo.mapper.MemberMapper">
     <select id="getUserById" resultType="Member">
-        SELECT name, password, authority, enabled FROM user_list WHERE name=#{value}
+        SELECT name, password, authority, enabled FROM user_list WHERE name=#{username}
     </select>
     <insert id="signup">
         INSERT INTO user_list  VALUES (#{username}, #{password}, 'ROLE_USER', 1);
     </insert>
 
-    <select id="listAll" resultType="Member">
-        SELECT name,password,authority,enabled FROM user_list
+    <select id="buylist" resultType="BuyList">
+        SELECT member,board_title,board_no,buy_date FROM buylist WHERE member=#{username}
     </select>
-
 </mapper>

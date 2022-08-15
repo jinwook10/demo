@@ -37,7 +37,7 @@
                         <div class="dropdown-header bg-light py-2">
                             <div class="fw-semibold">계정</div>
                         </div>
-                        <a class="dropdown-item" href="">
+                        <a class="dropdown-item" href="/member/mypage">
                             <i class="icon icon-2xl cil-zoom"></i> 마이 페이지</a><a class="dropdown-item" href="">
                         <i class="icon icon-2xl cil-money"></i> 결제 수단</a>
                         <div class="dropdown-divider"></div>

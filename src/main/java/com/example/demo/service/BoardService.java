@@ -19,4 +19,6 @@ public interface BoardService {
     public File down(String no);
 
     public Integer viewfile(String no);
+
+    public void buy(String member, String title, String no);
 }

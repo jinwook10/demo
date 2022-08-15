@@ -40,7 +40,7 @@
                             <div class="dropdown-header bg-light py-2">
                                 <div class="fw-semibold">계정</div>
                             </div>
-                            <a class="dropdown-item" href="">
+                            <a class="dropdown-item" href="/member/mypage">
                                 <i class="icon icon-2xl cil-zoom"></i> 마이 페이지</a><a class="dropdown-item" href="">
                             <i class="icon icon-2xl cil-money"></i> 결제 수단</a>
                             <div class="dropdown-divider"></div>
@@ -83,7 +83,7 @@
                                     <td class="title">
                                         <a href="<%=request.getContextPath() %>/view?no=${list.id}">
                                             <span>${list.title}</span> </a>
-                                        [댓글숫자자리]
+<%--                                        [댓글숫자자리]--%>
                                     </td>
                                     <td class="author">${list.writer}</td>
                                     <td class="time">${list.write_time}</td>
