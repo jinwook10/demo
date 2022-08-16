@@ -96,6 +96,7 @@
                                 </c:if>
                             </div>
                             <c:if test="${not empty fileno}">
+                            <c:if test="${empty buycheck}">
                             <div class="btnArea">
                                 <form action="/member/buy" method="post">
                                     <input type="hidden" value="${board.title}" name="title">
@@ -103,6 +104,7 @@
                                 <button type="submit" class="btn btn-success"> 구매</button>
                                 </form>
                             </div>
+                            </c:if>
                             </c:if>
 <%--                    댓글        <div id="write_comment">--%>
 <%--                                <form action="" method="post" class="write_comment">--%>

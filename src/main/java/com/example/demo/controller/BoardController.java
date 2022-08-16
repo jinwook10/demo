@@ -7,6 +7,7 @@ import com.example.demo.model.Member;
 import com.example.demo.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.security.Principal;
 import java.util.List;
 import java.util.UUID;
 
@@ -100,16 +102,17 @@ public class BoardController {
     }
 
     @GetMapping("/view")
-    public String view(@RequestParam("no") String no, Model model, Authentication auth) {
+    public String view(@RequestParam("no") String no, Model model, Authentication auth, Principal principal) {
         Board board = boardService.viewDetail(no);
         Integer fileNo = boardService.viewfile(no);
+        if(principal != null) {
         String username = ((Member) auth.getPrincipal()).getName();
-        BuyList buycheck = boardService.buycheck(username, no);
-
+            BuyList buycheck = boardService.buycheck(username, no);
+        model.addAttribute("buycheck", buycheck);
+        }
         model.addAttribute("no", no);
         model.addAttribute("board", board);
         model.addAttribute("fileno", fileNo);
-        model.addAttribute("buycheck", buycheck);
         return "board/boardDetail";
     }
 
